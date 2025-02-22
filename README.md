@@ -107,7 +107,7 @@ urlpatterns = [
     path('admin/', admin.site.urls), 
 ]
 ```
-##models.py
+## models.py
 É onde os modelos de dados do aplicativo são definidos. Por padrão, está vazio. Cada modelo é uma classe Python baseada em django.db.models.Model e será migrado para o banco de dados como uma tabela. Por enquanto, deixe o arquivo sem alterações, pois você aprenderá a trabalhar com modelos em uma etapa posterior.
 
 ## tests.py
