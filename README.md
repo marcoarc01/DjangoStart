@@ -81,42 +81,27 @@ def index(request):
 
 ## urls.py
 O pacote do projeto tem um arquivo com esse nome que define os padrões de URL para o projeto.
-
-Em linhas semelhantes, o senhor precisa fornecer o mecanismo de roteamento de URL para o aplicativo.
-
-A pasta do aplicativo não tem um arquivo com esse nome quando é criada. Por isso, você precisa criar um.
-
-Salve o seguinte snippet como urls.py na pasta DjangoApp.
-
-```
-from django.urls import path 
-from . import views 
-
-urlpatterns = [ 
-    path('', views.index, name='index'), 
-]
-```
-Depois voce precisa atualizar a lista `urlpatterns` no urls.py da pasta do `DjangoHello` com o seguinte codigo:
+Você precisa atualizar a lista `urlpatterns` no urls.py da pasta do `DjangoHello` com o seguinte codigo:
 
 ```
 from django.contrib import admin 
 from django.urls import include, path 
+from DjangoApp import views
 
 urlpatterns = [ 
-    path('app/', include('DjangoApp.urls')), 
+    path('', views.index, name='index'), 
     path('admin/', admin.site.urls), 
-]
+] 
+
 ```
+
 ## models.py
 É onde os modelos de dados do aplicativo são definidos. Por padrão, está vazio. Cada modelo é uma classe Python baseada em django.db.models.Model e será migrado para o banco de dados como uma tabela. Por enquanto, deixe o arquivo sem alterações, pois você aprenderá a trabalhar com modelos em uma etapa posterior.
 
 ## tests.py
 É onde os testes para o aplicativo são escritos. Por enquanto, deixe o arquivo inalterado, sem modificá-lo.
 
-## settings.py 
-Finalizando, é preciso atualizar a lista `INSTALLED_APPS` adicionando o nome : `'DjandoApp',` no final da lista.
-
 ## Finalizando
 
-Após realizar todas etapas acima visite o seu localhost no navegador digitando localhost:8000/app/
+Após realizar todas etapas acima visite o seu localhost no navegador digitando localhost:8000/
 e verá o Hello, World escrito na pagina
