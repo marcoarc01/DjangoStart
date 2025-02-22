@@ -1,0 +1,13 @@
+# Ambiente Virtual
+venv/
+teste/
+env/
+*.pyc
+__pycache__/
+
+# Banco de Dados SQLite (se usar)
+db.sqlite3
+
+# Configurações do VSCode/PyCharm
+.vscode/
+.idea/
